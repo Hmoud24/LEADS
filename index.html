@@ -1,0 +1,1098 @@
+
+<!doctype html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="الثورةالسورية,القادة,سوريا,الجهاد,المعارضة,الذاكرة,الاستشهاد,احرار الشام, جيش الاسلام,ارشيف الثورة,ارشيف" />
+  <title>وجوه لم تُنسَ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root{
+      --bg: #000000;
+      --panel: rgba(255,255,255,0.04);
+      --panel2: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.55);
+      --line: rgba(255,255,255,0.10);
+      --accent: #8a1f2d;   /* أحمر داكن */
+      --shadow: 0 18px 45px rgba(0,0,0,0.45);
+      --radius: 22px;
+      --radius2: 18px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(138,31,45,0.22), transparent 55%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(255,255,255,0.06), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: "Tajawal", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a{ color: inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    /* Layout */
+    .container{
+      width: min(var(--max), 92vw);
+      margin: 0 auto;
+    }
+
+    /* Top bar */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,0.55);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-family: "Cairo", sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(138,31,45,0.16);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-start;
+    }
+    .pill{
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .pill:hover{
+      border-color: rgba(255,255,255,0.18);
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero{
+      padding: 54px 0 30px;
+    }
+    .heroCard{
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .heroCard::before{
+      content:"";
+      position:absolute;
+      inset:-40px -60px auto auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(138,31,45,0.40), transparent 60%);
+      filter: blur(2px);
+      opacity: 0.9;
+    }
+    .heroTitle{
+      font-family: "Cairo", sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 4vw, 44px);
+      margin: 0 0 8px;
+    }
+    .heroSub{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+    .heroNote{
+      color: var(--muted2);
+      font-size: 14px;
+      margin: 0;
+      border-right: 3px solid var(--accent);
+      padding-right: 12px;
+    }
+
+    /* Section title */
+   
+    .sectionHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 12px;
+      margin: 18px 0 14px;
+    }
+    .sectionHead h2{
+      font-family:"Cairo", sans-serif;
+      margin:0;
+      font-size: 22px;
+    }
+    .sectionHead p{
+      margin:0;
+      color: var(--muted2);
+      font-size: 14px;
+    }
+
+    /* Grid cards */
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 4;
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      overflow:hidden;
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.30);
+      position: relative;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+    .card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .photoWrap{
+      aspect-ratio: 4 / 3;
+      background: rgba(255,255,255,0.04);
+      position: relative;
+      overflow:hidden;
+    }
+    .photoWrap img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+      opacity: 0.92;
+      transform: scale(1.02);
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+    .card:hover .photoWrap img{
+      transform: scale(1.06);
+      opacity: 0.98;
+      filter: grayscale(0) contrast(1.05);
+    }
+
+    /* Hover overlay */
+    .overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      padding: 14px;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.72));
+      opacity: 0;
+      transition: opacity 180ms ease;
+      gap: 10px;
+    }
+    .card:hover .overlay{ opacity: 1; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(11,15,20,0.65);
+      color: var(--text);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      border-color: rgba(255,255,255,0.28);
+    }
+    .tag{
+      font-size: 13px;
+      color: rgba(255,255,255,0.80);
+      background: rgba(138,31,45,0.18);
+      border: 1px solid rgba(138,31,45,0.28);
+      padding: 7px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .cardBody{
+      padding: 14px 14px 16px;
+    }
+    .name{
+      font-family:"Cairo", sans-serif;
+      font-weight: 800;
+      margin: 0 0 4px;
+      font-size: 18px;
+    }
+    .years{
+      margin: 0;
+      color: var(--muted2);
+      font-size: 14px;
+    }
+
+    /* Details (CSS-only modal/section via :target) */
+    .details{
+      display:none;
+      padding: 22px 0 0;
+    }
+    .details:target{
+      display:block;
+    }
+    .detailCard{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .detailTop{
+      display:grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 18px;
+      padding: 18px;
+      align-items: start;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent);
+    }
+    .detailImg{
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      aspect-ratio: 4/3;
+    }
+    .detailImg img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+      opacity: 0.95;
+    }
+    .detailText h3{
+      font-family:"Cairo", sans-serif;
+      margin: 0 0 6px;
+      font-size: 26px;
+    }
+    .detailText .meta{
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .detailText .bio{
+      margin: 0 0 0;
+      color: rgba(255,255,255,0.86);
+      font-size: 15px;
+      max-width: 70ch;
+    }
+
+/* Timeline */
+    .timeline{
+      padding: 18px;
+    }
+    .timeline h4{
+      font-family:"Cairo", sans-serif;
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+    .steps{
+      display:grid;
+      gap: 10px;
+    }
+    .step{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .step b{
+      display:block;
+      font-family:"Cairo", sans-serif;
+      margin-bottom: 3px;
+    }
+    .step span{
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .detailActions{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+      padding: 14px 18px 18px;
+      border-top: 1px solid var(--line);
+    }
+    .back{
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+    .back:hover{ color: var(--text); border-color: rgba(255,255,255,0.18); }
+
+    /* Footer quote */
+    footer{
+      padding: 26px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted2);
+    }
+  
+ 
+
+  </style>
+
+</head>
+
+<body>
+  
+  <header>
+
+    <div class="container topbar">
+      <div class="brand">
+        <span class="dot"></span>
+         <span> مِّنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ ۖ فَمِنْهُم مَّن قَضَىٰ نَحْبَهُ وَمِنْهُم مَّن يَنتَظِرُ ۖ وَمَا بَدَّلُوا تَبْدِيلًا </span>
+      </div>
+
+      <nav class="nav" >
+        <a class="pill" href="#gallery">المعرض</a>
+        <a class="pill" href="#about">عن الموقع</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero" id="top">
+      <div class="heroCard">
+        <h1 class="heroTitle">وجوه لم تُنسَ</h1>
+        <p class="heroSub">قادة تركوا أثرًا… ورحلوا قبل أن يروا الحلم كاملًا.</p>
+        <p class="heroNote">هذا الموقع محاولة لحفظ الذاكرة… لأن النسيان أخطر من الموت.</p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+
+      <div class="sectionHead">
+
+        <h2>المعرض</h2>
+        <p>اضغط على أي بطاقة لقراءة تعريف مختصر</p>
+
+      </div>
+
+      <div class="grid">
+
+        <!-- CARD 1 -->
+        <a class="card" href="#leader-1">
+          <div class="photoWrap">
+            <img src="./images/l1.jpg" alt="صورة القائد الأول">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">محمد كعكة _ ابو يزن الشامي </h3>
+            <p class="years">1980 — 2014</p>
+          </div>
+        </a>
+
+        <!-- CARD 2 -->
+        <a class="card" href="#leader-2" >
+          <div class="photoWrap">
+            <img src="./images/l4.jpg" alt="صورة القائد الثاني">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">محمد زهران علوش _ قمر الجهاد </h3>
+            <p class="years">1971 — 2015</p>
+          </div>
+        </a>
+
+        <!-- CARD 3 -->
+        <a class="card" href="#leader-3">
+          <div class="photoWrap">
+            <img src="./images/l33.PNG" alt="صورة القائد الثالث">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name"> عبد القادر الصالح _ حجي مارع</h3>
+            <p class="years">1979 — 2013</p>
+          </div>
+        </a>
+
+         <!-- CARD 4 -->
+        <a class="card" href="#leader-4">
+          <div class="photoWrap">
+            <img src="./images/l2.jpg" alt="صورة القائد">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">حسين الهرموش</h3>
+            <p class="years">1972 — 2011</p>
+          </div>
+        </a>
+
+         <!-- CARD 5 -->
+        <a class="card" href="#leader-5">
+          <div class="photoWrap">
+            <img src="./images/l7.jpg" alt="صورة القائد ">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">أنس عبد الرزاق ناصر _ ابو أيمن الحموي</h3>
+            <p class="years">1981 — 2013</p>
+          </div>
+        </a>
+
+         <!-- CARD 6 -->
+            <a class="card" href="#leader-6">
+          <div class="photoWrap">
+            <img src="./images/l5.jpg" alt="صورة القائد ">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">حسان عبود _ ابو عبدالله الحموي</h3>
+            <p class="years">1978 — 2014</p>
+          </div>
+        </a>
+
+         <!-- CARD 7 -->
+        <a class="card" href="#leader-7">
+          <div class="photoWrap">
+            <img src="./images/l8.png" alt="صورة القائد ">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name"> محمد كربج _ ابو خالد السوري</h3>
+            <p class="years">1963 — 2014</p>
+          </div>
+        </a>
+
+         <!-- CARD 8 -->
+        <a class="card" href="#leader-8">
+          <div class="photoWrap">
+            <img src="./images/l10.jpg" alt="صورة القائد الثالث">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">عبد الباسط الساروت _ بلبل الثورة</h3>
+            <p class="years">1992 — 2019</p>
+          </div>
+        </a>
+
+          <!-- CARD 9 -->
+        <a class="card" href="#leader-9">
+          <div class="photoWrap">
+            <img src="./images/l9.jpg" alt="صورة القائد الثالث">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">محمود علي طيبة _ ابو عبد الملك</h3>
+            <p class="years">1982 — 2014</p>
+          </div>
+        </a>
+
+         <!-- CARD 10 -->
+        <a class="card" href="#leader-10">
+          <div class="photoWrap">
+            <img src="./images/l12.jpg" alt="صورة القائد الثالث">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">حسين عبد السلام _ ابو حمزة شرقية</h3>
+            <p class="years">// — 2014</p>
+          </div>
+        </a>
+
+         <!-- CARD 11 -->
+
+        <a class="card" href="#leader-11">
+          <div class="photoWrap">
+            <img src="./images/l13.jpg" alt="صورة القائد الثالث">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">رضوان نموس _ ابو عمر سراقب</h3>
+            <p class="years"> 1971 — 2016</p>
+          </div>
+        </a>
+ 
+         <!-- CARD 12 -->
+
+        <a class="card" href="#leader-12">
+          <div class="photoWrap">
+            <img src="./images/l11.jpg" alt="صورة القائد الثالث">
+            <div class="overlay">
+              <span class="btn">تعرف على قصته</span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h3 class="name">يوسف الجادر _ ابو فرات</h3>
+            <p class="years"> 1970 — 2012</p>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- DETAILS 1 -->
+
+    <section class="details" id="leader-1">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l1.jpg" alt="صورة القائد الأول">
+          </div>
+
+          <div class="detailText">
+            <h3>محمد كعكة _ ابو يزن الشامي</h3>
+            <p class="meta">1980 — 2014</p>
+            <p class="bio">
+            هو محمد أمين بن برهان الدين كعكة، المعروف بلقب "أبو يزن الشامي"، ولد في مدينة دوما بريف دمشق عام 1980، وتخرج مهندساً في الاتصالات. 
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> يُعد من أبرز العقول السياسية والفكرية في الثورة السورية، حيث شغل منصب رئيس الهيئة السياسية في "حركة أحرار الشام الإسلامية" وكان عضواً في مجلس شورتها. وجمع بين العلم والجهاد</span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span>  استشهد في 9 سبتمبر 2014 مع قادة الصف الأول للحركة في عملية التفجير الشهيرة التي استهدفت مقر اجتماعهم في بلدة رام حمدان بريف إدلب، ليرحل كأحد أهم الرموز الذين حاولوا الموازنة بين الهوية الإسلامية والعمل الوطني السوري.</span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS 2 -->
+
+    <section class="details" id="leader-2">
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l4.jpg" alt="صورة القائد الثاني">
+          </div>
+
+          <div class="detailText">
+            <h3> محمد زهران علوش _ قمر الجهاد </h3>
+            <p class="meta">1971 — 2015</p>
+            <p class="bio">
+             هو محمد زهران علوش، ولد في مدينة دوما بالغوطة الشرقية عام 1971، وهو نجل الداعية المعروف الشيخ كعكة (عبد الله علوش). درس الشريعة الإسلامية في دمشق والجامعة الإسلامية بالمدينة المنورة، واعتُقل في سجون النظام السوري لسنوات قبل أن يُفرج عنه مع بداية الثورة عام 2011.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+            <div class="step"><b>الدور في الثورة</b><span> برز دوره العسكري كقائد ومؤسس لـ "جيش الإسلام"، الذي حوله إلى القوة العسكرية الأكبر والأكثر تنظيماً في محيط العاصمة دمشق، كما شغل منصب القائد العام لـ "الجبهة الإسلامية". عُرف بقدرته العالية على الضبط والربط العسكري وإدارة منطقة الغوطة الشرقية المحاصرة لسنوات.</span></div>
+            <div class="step"><b>الاستشهاد</b><span>استشهد في 25 ديسمبر 2015 إثر غارة جوية روسية استهدفت اجتماعاً كان يحضره في بلدة أوتايا بالغوطة الشرقية، ليترك برحيله فراغاً كبيراً في قيادة الثورة بريف دمشق.</span></div>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS 3 -->
+
+    <section class="details" id="leader-3">
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/L33.png" alt="صورة القائد الثالث">
+          </div>
+
+          <div class="detailText">
+            <h3>عبد القادر الصالح _ حجي مارع</h3>
+            <p class="meta">1979 — 2013</p>
+            <p class="bio">
+            عبد القادر الصالح، المعروف بلقبه الشهير "حجي مارع"، ولد في بلدة مارع بريف حلب عام 1979، وكان يعمل في تجارة المواد الغذائية والدعوة قبل الثورة.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+            
+            <div class="step"><b>الدور في الثورة</b><span>يُعتبر من أبرز القادة الميدانيين وأكثرهم قبولاً شعبياً، حيث أسس وقاد "لواء التوحيد" الذي كان له الفضل الأكبر في إطلاق معركة السيطرة على مدينة حلب في صيف 2012. تميز دوره بالتواضع الشديد والتواجد الدائم في الخطوط الأمامية للجبهات، وكان رمزاً للوحدة بين الفصائل العسكرية في الشمال السوري.</span></div>
+            <div class="step"><b>الاستشهاد</b><span>استشهد في 17 نوفمبر 2013 متأثراً بجراحه بعد غارة جوية استهدفت اجتماعاً لقادة اللواء في مدرسة المشاة بحلب</span></div>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS 4 -->
+
+    <section class="details" id="leader-4">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l2.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3> حسين هرموش</h3>
+            <p class="meta">1972 — 2011</p>
+            <p class="bio">
+           هو حسين بن هرموش، ولد في قرية "ابلين" بجبل الزاوية بمحافظة إدلب عام 1972، وكان ضابطاً برتبة مقدم في الجيش السوري. يُعتبر المؤسس الأول للنواة العسكرية المعارضة،
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> أعلن انشقاقه في يونيو 2011 احتجاجاً على قمع المتظاهرين، ليؤسس "حركة الضباط الأحرار" التي كانت الشرارة الأولى لتأسيس الجيش السوري الحر لاحقاً. تميز دوره بكونه أول ضابط رفيع يكسر حاجز الخوف وينظم العمل العسكري لحماية المدنيين في جسر الشغور وإدلب</span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span> اختفى في ظروف غامضة من الأراضي التركية في أواخر عام 2011، ليظهر لاحقاً في معتقلات النظام السوري، وتؤكد التقارير الحقوقية إعدامه داخل سجن صيدنايا في بدايات عام 2012، ليبقى رمزاً تاريخياً كأول ضابط منشق في الثورة. </span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+    <!--Details 5-->
+
+      <section class="details" id="leader-5">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l7.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3> أنس عبد الرزاق ناصر _ ابو ايمن الحموي</h3>
+            <p class="meta">1981 — 2013</p>
+            <p class="bio">
+          هو أنس عبد الرزاق ناصر، المعروف بلقب "أبو أيمن الحموي"، ولد في حماة عام 1981، ونشأ في بيئة ناضلت طويلاً، حيث كان والده معتقلاً سياسياً سابقاً.  
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span>برز دوره في الثورة السورية منذ بدايتها كأحد أبرز قادة العمل الميداني والعسكري في ريف حماة، حيث أسس وقاد "لواء الحق" التابع لحركة أحرار الشام الإسلامية، وكان له دور محوري في قيادة المعارك الكبرى وتوحيد الفصائل في المنطقة الوسطى. عُرف الحموي بحنكته العسكرية وتواجده الدائم في الصفوف الأولى للجبهات، </span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span> استشهد في 7 نوفمبر 2013 متأثراً بإصابته إثر استهداف سيارته بعبوة ناسفة (أو قصف استهدف مقره حسب بعض الروايات) في ريف حماة، ليرحل تاركاً خلفه إرثاً كأحد القادة الميدانيين الذين حظوا باحترام واسع في أوساط المعارضة السورية</span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+       <!--Details 6-->
+
+      <section class="details" id="leader-6">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l5.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3> حسان عبود _ ابو عبدالله الحموي</h3>
+            <p class="meta">1978 — 2014</p>
+            <p class="bio">
+           هو حسان عبود، المعروف بلقبه الحركي "أبو عبد الله الحموي"، ولد في مدينة حماة عام 1978، وتخرج من كلية الآداب قسم اللغة الإنجليزية. يُعتبر الشخصية الأبرز والمؤسس الأول لـ "حركة أحرار الشام الإسلامية"، حيث قادها لتصبح واحدة من أكبر وأكثر الفصائل تنظيماً في الثورة السورية. تميز دوره بكونه "عقل الحركة" ومنظرها السياسي
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> سعى لتقديم مشروع يجمع بين العمل العسكري والصبغة الإسلامية الوطنية، وكان رئيساً للهيئة السياسية في "الجبهة الإسلامية". </span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span>استشهد في 9 سبتمبر 2014 في حادثة غامضة وصادمة، إثر تفجير استهدف اجتماعاً سرياً لقادة الصف الأول للحركة في مقر "صفر" بقرية رام حمدان بريف إدلب، مما أدى لمقتله مع نحو 45 من كبار قادة الحركة، في واقعة اعتبرت من أكبر الضربات التي تعرضت لها المعارضة السورية المسلحة.</span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+     <!--Details 7-->
+
+      <section class="details" id="leader-7">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l8.png" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3>محمد كربج _ ابو خالد السوري</h3>
+            <p class="meta">1963 — 2014</p>
+            <p class="bio">
+        هو محمد باهر بن عبد اللطيف كربج، المعروف بلقب "أبو خالد السوري"، ولد في مدينة حلب عام 1963. يُعد من الشخصيات التاريخية في العمل الإسلامي، حيث عاد إلى سوريا مع بداية الحراك ليشارك في العمل الميداني
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> أحد المؤسسين الأوائل لـ "حركة أحرار الشام الإسلامية" وعضواً بارزاً في مجلس شورتها. تميز دوره بكونه حلقة وصل وقامة تحظى باحترام مختلف الفصائل، وعُرف بوقوفه الحازم ضد فكر تنظيم "داعش" وممارساته</span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span>استشهد في 23 فبراير 2014 إثر هجوم انتحاري استهدف مقره في حي الهلك بمدينة حلب، وهو الهجوم الذي اتُّهم فيه تنظيم "داعش" رسمياً، ليُغلق برحيله فصل من فصول القيادة الحكيمة داخل الحركة.</span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+     <!--Details 8-->
+
+      <section class="details" id="leader-8">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l10.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3>عبد الباسط الساورت _ بلبل الثورة</h3>
+            <p class="meta">1992 — 2019</p>
+            <p class="bio">
+        هو عبد الباسط ممدوح الساروت، ولد في مدينة حمص عام 1992، وبرز كرياضي موهوب حيث كان حارساً لمرمى نادي الكرامة السوري ومنتخب سوريا للشباب. مع انطلاق الثورة السورية عام 2011، ترك مسيرته الرياضية ليصبح "بلبل الثورة" ومنشدها الأول في ساحات حمص
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> انتقل للعمل المسلح دفاعاً عن مدينته وقاد "كتيبة شهداء البياضة" خلال سنوات حصار حمص القاسية. فقد الساروت والده وأربعة من أشقائه خلال الحرب، وبعد تهجيره إلى الشمال السوري، انضم كقيادي إلى فصيل "جيش العزة" </span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span>ليُصاب أخيراً في معارك ريف حماة الشمالي ويستشهد في 8 يونيو 2019 متأثراً بجراحه
+             </span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+      <!--Details 9-->
+
+      <section class="details" id="leader-9">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l9.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3>محمود علي طيبة _ ابو عبد الملك</h3>
+            <p class="meta">1982 — 2014</p>
+            <p class="bio">
+              يُعد الشيخ محمود علي طيبة، الملقب بـ "أبو عبد الملك"، من المرجعيات الفكرية والشرعية الوازنة في الثورة السورية. ولد في مدينة الباب بريف حلب، ونشأ في بيئة عُرفت بالعلم والفضل، مما أهله ليكون من الرعيل الأول المؤسس لـ حركة أحرار الشام الإسلامية.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span>تولى منصب رئيس الهيئة الشرعية في الحركة، حيث برز كأحد أهم منظريها وصمام أمان لمسارها الفكري. عُرف بحكمته العالية وقدرته على الفصل في النزاعات المعقدة، مساهماً في صياغة المبادئ الناظمة للعمل الثوري والميداني</span>
+            </div>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span> خُتمت حياته بالشهادة في حادثة رام حمدان بريف إدلب عام 2014، حيث ارتقى مع ثلة من قادة الحركة، مخلفاً وراءه مدرسة في المنهج والاعتدال.
+             </span>
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+      <!--Details 10-->
+
+    <section class="details" id="leader-10">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l12.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3>حسين عبد السلام _ ابو حمزة شرقية</h3>
+            <p class="meta">// — 2014</p>
+            <p class="bio">
+              حسين عبد السلام، ابن مدينة دير حافر، من الرموز العسكرية المؤسسة للثورة في ريف حلب الشرقي
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> وضع اللبنات الأولى للعمل المسلح بتأسيسه "كتيبة أبو دجانة"، التي انضمت لاحقاً لصفوف حركة أحرار الشام الإسلامية، حيث برز فيها كقائد ميداني محنك وعضو فاعل في مجالسها العسكرية.
+             اتسمت مسيرته بالانضباط والتمثيل الحقيقي لثوار منطقته</span>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span> حتى ارتقى شهيداً في حادثة تفجير مقر "رام حمدان" الشهيرة عام 2014، والتي قضى فيها رفقة قادة الصف الأول للحركة، ليبقى اسماً محفوراً في ذاكرة العمل الثوري السوري.</span>
+          
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+       <!--Details 11-->
+
+    <section class="details" id="leader-11">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l13.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3>رضوان نموس _ ابو عمر سراقب</h3>
+            <p class="meta"> 1971 — 2016</p>
+            <p class="bio">
+             قائد عسكري سوري من مواليد ريف إدلب عام 1971. يُعد المحرك الميداني الأول لعمليات "جيش الفتح
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span> المسؤول عن وضع الخطط الاستراتيجية التي أدت إلى تحرير كامل مركز محافظة إدلب عام 2015. بصفته القائد العسكري العام، استطاع تنسيق العمل بين كبرى الفصائل السورية، وتوّج جهوده بقيادة عملية كسر الحصار عن أحياء مدينة حلب عام 2016.
+         عُرف بمهارته في إدارة المعارك المشتركة والقدرة على تحقيق التوازن الميداني في أصعب الظروف</span>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span> انتهت مسيرته بالشهادة في 8 أيلول 2016 إثر ضربة جوية استهدفت اجتماعاً قيادياً بريف حلب، ليغيب بذلك واحد من أهم المخططين العسكريين في تاريخ الثورة السورية.
+</span>
+          
+          </div> 
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+       <!--Details 12-->
+
+    <section class="details" id="leader-12">
+      
+      <div class="detailCard">
+        <div class="detailTop">
+          <div class="detailImg">
+            <img src="./images/l11.jpg" alt="صورة القائد ">
+          </div>
+
+          <div class="detailText">
+            <h3>يوسف الجادر _ ابوفرات</h3>
+            <p class="meta"> 1970 — 2012</p>
+            <p class="bio">
+          وُلد يوسف في مدينة جرابلس ودرسَ في أحد المدارس المحليّة بالمدينة ثمّ تخرج من ثانوية أحمد سليم ملا ليلتحق بمعهد إعداد المدرسين في مدينة حلب ثمّ تركها بعد عامٍ واحدٍ ليلتحقَ بالكلية الحربية في حمص في الأوّل من نوفمبر من عام 1990.
+     تخرّج الجادر من الكلية الحربية في كانون الأول/يناير 1993 برتبة ملازم أول ثمّ تابعّ عمله بالسلك العسكري حتى ارتقى إلى رتبة عقيد فصارَ قائد كتيبة المدرعات في اللاذقية.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <h4>محطات سريعة</h4>
+          <div class="steps">
+         
+            <div class="step">
+              <b>الدور في الثورة</b>
+              <span>قضى يوسف وقتًا طويلًا قائدًا لأحدِ كُتب المدرعات ثمّ تغيّرت الأمور عندما اندلعت الثورة السورية عام 2011 حيثُ انشقّ عن الجيش النظامي في وقتٍ مبكرٍ نوعًا ما؛ كان ذلك في 18 تمّوز/يوليو 2012 فسارعَ بالانضمام إلى مجموعة «لواء التوحيد» في مدينة الباب بريف حلب وعاد بعدها إلى مسقط رأسه جرابلس ليُصبح أحد قادة اللواء. شاركَ يوسف الجادر بالسيطرة على أجزاء من ريف حلب كما قادَ مع الجيش الحر المعركة التي نجحَ فيها هذا الأخير في السيطرةِ على حيي سيف الدولة وصلاح الدين بالإضافةِ إلى السيطرة على مدرسة المشاة بتاريخ 13 كانون الأول/ديسمبر 2012.</span>
+            <div class="step">
+              <b>الاستشهاد</b>
+              <span> قُتل يوسف الجادر في 15 كانون الأول/ديسمبر من عام 2012 بعدَ استهدافِ مقره معَ عددٍ منَ الثوار الآخرين بقذيفة مدفعية أُطلقت من أحد الدبابات التابعة للنظام والتي كانت تتمركزُ في معسكر التدريب الجامعي في المدينة.
+             </span>
+          
+          </div>
+        </div>
+
+        <div class="detailActions">
+          <a class="back" href="#gallery">← رجوع للمعرض</a>
+          <a class="pill" href="#top">إلى الأعلى</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+
+      <div class="sectionHead">
+
+        <h2>عن الموقع</h2>
+        <p>أخي صانع المجد ها قد ربحت 
+          أهنيك يافخرنا من جديد
+          وعهدا سنمضي كما قد مضيت
+          وعن نهج دريك لا لن نحيد
+        </p>
+
+      </div>
+
+<div class="heroCard" style="padding:18px 18px;">
+        <p class="quote">
+          هذا الموقع محاولة لحفظ الذاكرة… لأن النسيان أخطر من الموت.
+          رحلوا وبقيت قصصهم، ونحن شهود.
+        </p>
+      </div>
+    </section>
+
+  </main>
+  
+</body>
+<footer> <h1>شكراً لزيارتكم لموقعنا</h1> </footer>
+
+</html>
